@@ -20,7 +20,7 @@ python3 updater.py
 ## Pushing an update
 To use my revolutionary alternative to a server, aka GitHub, see https://github.com/NoahFiner/groove-remote.
 
-On a serious note, if you'd like to I would be more than happy to write some actual back-end code for serving up files. I categorized an architecture of just a few GET requests to be more on the trivial.
+On a serious note, if you'd like to I would be more than happy to write some actual back-end code for serving up files. I categorized an architecture of just a few GET requests to be unnecessary to write.
 
 ## Assumptions
 There were a few assumptions I had to make
