@@ -35,5 +35,6 @@ There were a few assumptions I had to make
 3) Create a simple server that has a few endpoints returning config.json as actual json, the text of updater.py, and maybe more files. Include documentation for a sysadmin to upload updated files and update a config.json or specified endpoints.
 4) See #3.
 
-## More improvements
+## More improvements/notes
 1) Use YAML instead of JSON if the back-end is written in Flask. If it's written in JS or Go, we should stick with JSON.
+I use https://blog.petrzemek.net/2014/03/23/restarting-a-python-script-within-itself/ to restart updater.py

@@ -71,10 +71,12 @@ Would you like to update? (y/n):""".format(
             print("verified!")
 
             print("Restarting the updater...\n\n")
+            
             # Restart the program
             import os
             import sys
-            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+            os.execv(sys.executable, ['python', __file__])
+            # os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
         else:
             print("UNVERIFIED!")
             print("Please use generate_update.py to generate a valid hash")
@@ -94,7 +96,7 @@ Would you like to update? (y/n):""".format(
 
 
 def special_function():
-    print("Hello from version 2.0!")
+    print("Hello from version 2.1!")
 
 if __name__ == "__main__":
     updater = Updater()
