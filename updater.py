@@ -79,8 +79,6 @@ Would you like to update? (y/n):""".format(
             files = list(filter(lambda x: x[0] != '.', files))
             # Now append
             result.extend(files)
-
-        self.paths = result
         return result
 
     # Write text to the file named filename
@@ -108,8 +106,6 @@ Would you like to update? (y/n):""".format(
         print("done!")
 
         print("Checking MD5 hash with config...")
-        print(self.get_md5())
-        print(remote_config["hash"])
         if(self.get_md5() == self.remote_config["hash"]):
             print("verified!")
 
@@ -124,10 +120,12 @@ Would you like to update? (y/n):""".format(
 
     # Helper function for getting an MD5 hash of all files and therefore determining
     # authenticity of an update	
+
+    # We need to run get_paths again in case a file is deleted
     def get_md5(self):	
         md5 = hashlib.md5()
-        for filename in self.paths:
-            # We can't hash generate_update.py
+        for filename in self.get_paths():
+            # We can't hash generate_update.py, config.json, or README.md
             if(filename != "generate_update.py"
                 and filename != "config.json"
                 and filename != "README.md"):
@@ -142,7 +140,7 @@ Would you like to update? (y/n):""".format(
 
 
 def special_function():
-    print("Hello from version 1.0!")
+    print("Hello from version 1.1!")
 
 if __name__ == "__main__":
     updater = Updater()
